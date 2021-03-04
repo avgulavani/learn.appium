@@ -1,0 +1,52 @@
+
+
+1. Emulator Setup Create Driver Seesion
+	Go to link and download application apk 
+	https://github.com/appium/appium/blob/master/sample-code/apps/ApiDemos-debug.apk
+
+
+		1. Start emulator device
+		2. Open appium desktop
+		3. click on inspector
+		4. make sure Automatic server is selected
+		5. Go to Desire Capabilities section
+
+		add values as below
+		to get udid 
+		adb devices
+
+		{
+		  "platformName": "Android",
+		  "deviceName": "Pixel_3",
+		  "automationName": "UiAutomator2",
+		  "udid": "emulator-5554",
+		  "app": "C:\\Users\\consumer\\Downloads\\ApiDemos-debug.apk"
+		  }
+  
+2. Connecting to Appium CLI using custom server option(Appium desktop)
+	
+		Make sure JAVA_HOME is set
+		Make suer ANDROID_HOME is set
+		Make sure JAVA_HOME and ANDROID_HOME is in PATH variable
+		
+		1. Open Android Studio and connect to your emulator(mobile device)
+		2. go to command prompt and start server by typing command  appium
+		3. Open Appium Desktop and start server then stop . Then go to inspector to get appium window
+		4. Go to Custom server
+			enter Remote host 0.0.0.0 or remote port 4723 and remote path /wd/hub
+			and desire capabilities. Please note that do not copy paste json as it's bug in appium.
+			Add properties one by one  as below-
+			{
+				"platformName": "Android",
+				"deviceName": "Pixel_3",
+				"automationName": "UiAutomator2",
+				"udid": "emulator-5554",
+				"app": "D:\\ApiDemos-debug (1).apk"
+			}
+		5 click on Start Seesion in appium desktop
+		
+			
+		
+		
+		
+
