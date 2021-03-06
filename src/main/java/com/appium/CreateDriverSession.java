@@ -12,7 +12,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class CreateDriverSession {
 
-	public static void main(String[] args) throws MalformedURLException {
+	public static AppiumDriver initializeDriver(String platform) throws MalformedURLException {
 	
 		//"C:\\Users\\consumer\\eclipse-workspace\\com.appium\\src\\main\\java\\resources\\ApiDemos-debug.apk"
 		
@@ -23,15 +23,31 @@ public class CreateDriverSession {
 		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_3");
 		caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-		caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-		caps.setCapability(MobileCapabilityType.APP, appurl);
+		caps.setCapability("newCommandTimeout", 300);
+		
+		
+		
+		// launch emulator programmatically 
+		caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");   
+		caps.setCapability("avd", "Pixel_3");
+		caps.setCapability("avdLaunchTimeout", "180800");
+		
+		caps.setCapability(MobileCapabilityType.APP, appurl);	
+		
+		//caps.setCapability(MobileCapabilityType.UDID, "ZY223HVFQH");        // real device
+		
+		
+		/*
+		 *  to launch existing app -appPackage
+		 *  to launch app at particular activity within app-appActivity ex. gmail->sendemail
+		 */
+		//caps.setCapability("appPackage", "io.appium.android.apis");
+		//caps.setCapability("appActivity", ".accessibility.AccessibilityNodeProviderActivity");
 		
 		URL url=new URL("http://127.0.1.1:4723/wd/hub");  //-? localhost can be used here as well
 		
-		AppiumDriver appiumDriver=new AndroidDriver(url,caps);	
-		
-		
-		
+		AppiumDriver appiumDriver=new AndroidDriver(url,caps);
+		return appiumDriver;	
 
 	}
 

@@ -1,0 +1,19 @@
+Why appPackage and appactivity is needed?
+
+1. If you want to launch a application which is already installed on the mobile device.
+   Then we can pass appPackage and appActivitiy to desired capabilities 
+   
+ How to do it?
+ 
+ 2 There are two options.
+ 	
+ 	1. Bring app in focus (means 1. open emulator 2.open your app)
+ 	2 Go to terminal/cmd 
+ 	3 type - adb shell dumpsys window | grep -E mCurrentFocus  <mac>
+ 			 adb shell dumpsys activity | findstr mFocusedActivity <windows>
+ 			 adb shell "dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'" <windows>
+ 			 Reference- https://stackoverflow.com/questions/26581034/problems-with-grep-command-from-adb
+ 			 
+  	4.to launch existing app -appPackage
+	5.	  to launch app at particular activity within app-appActivity ex. gmail->sendemail
+		 
