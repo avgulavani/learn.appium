@@ -1,0 +1,41 @@
+---------------------------------------------
+Plan:
+---------------------------------------------
+
+- Avoid code duplication
+- Improve Code readability
+- Scalable automation
+- wait and driver command handling
+- Modular Independent Test cases
+- Exception handling
+- Parameterization
+- Add abstraction layer for test data
+- add abstraction layer for static text
+- Multiple platform support- ios/android
+- Logging framework
+- Reporting framework
+- Capture screenshot
+- different scrolling mechanisims
+- Parallel execution on iOS and Android
+- Programmitically start appium server
+- Integrating with git
+- Integrating with jenkin
+
+---------------------------------------------
+Tools
+---------------------------------------------
+Eclipse
+Appium
+Maven
+Java
+TestNG
+Log4j
+Extent Reporting
+JSON/EXCEL
+XML
+GitHub
+Jenkin
+-----------------------------
+Appium CLI: 1.19.1
+Appium Desktop: 1.18.3
+------------------------------

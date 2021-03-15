@@ -1,0 +1,52 @@
+Native View:
+Developed using native SDK i.e. Java  for android and swift for ios. Platform specific
+
+WebView:
+Developed using language say html,java etc
+Webview container uses browser functionality
+
+Mobile View:
+safari ios,chrome for andriod
+------------------------------------------------------------------------
+
+Inspecting Webview element using Chrome debuger:
+
+1. open desktop chrome
+2 chrome://inspect#devices
+3. copy CSS or XPATH or any other locator
+------------------------------------------------------------------------
+Note- 
+- For Android, in order to inspect web view element developer need to set setWebContentsDebuggingEnabled to true within app
+- for Android, default chrome driver version in appium should be compatiable with chrome browser version on the device
+- for iOS, appium can automate WKWebview and UIWebView elements, but not SafariViewController elements 
+------------------------------------------------------------------------
+
+Notes For real devices:
+------------------------------------------------------------------------
+Make sure USB is connected
+Make sure devices shows up as authorized for "adb devices" command
+Turn off Play Protect settings	
+
+1. Get Context Handles
+2. Switch to driver webview context
+3. Find webview elements
+
+------------------------------------------------------------------------
+
+The developer has created a new extension "SelectorsHub" which is more powerful version of the previous one. 
+You can use it instead to find optimized XPaths.
+
+------------------------------------------------------------------------
+So currently what is happening is with the Chrome browser automation, we are not able to use the ID
+and the class name locators because the Chrome browser uses the WTC standards by default.
+OK, in this case, you will get the invalid locator error.
+So I did some investigation and found out that this is a limitation with APM.
+And there is a defect that is already opened for this issue, and the difficulty is this one, OK?
+But it seems it is not going to be fixed because it is a limitation with the ABM.
+OK, and it seems the issue doesn't happen with selenium for next up, Chrome browser, because selling
+them internally converts the locators.
+That is the idea and the platinum processes before sending it to the browser driver.
+So to get over this issue, there are a couple of workarounds.
+And the first one is to force to was just on WPE protocol instead of WTC, and the second option is
+to convert the locators to success or to expand that is accepted by the WTC standards.
+------------------------------------------------------------------------
